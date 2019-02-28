@@ -1,0 +1,31 @@
+前言：
+git是github的托管系统，也是github文件存储的位置。Git bash就相当于站在Git存储服务器面前操作，而browser的github account相当于一个远端窗口。把github的Git系统看作一个大城市的大型服务器的话，browser 的github account就相当于在家的远程操作。
+
+主要操作步骤都能在github help中找到
+
+步骤：
+1. 下载git （https://git-scm.com/downloads）
+2. 配置Git Bash（让git知道你是谁）
+
+
+3. 把git bash和github通过SSH Key连接起来（https://help.github.com/en/articles/connecting-to-github-with-ssh）
+     （i）检查已有的SSH Key
+     （ii）申请新的SSH Key（用作git系统对你进行身份识别的密钥）
+     （iii）把SSH Key密钥添加到SSH agent上（新的密钥必须注册才能生效）
+     （iV）在github account上添加该SSH Key（这样大型服务器就知道能把你在家的电脑和agent上的你联系起来了）
+
+4. 上传本地文件（当然是通过git bash来操作了）
+   看github Help中的信息：https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line）
+  或者直接参考以下操作：
+
+
+   备注：这里要求在browser的github account中提前新建一个repository，作为本地文件将要保存的repository，并在新建的repository中clone链接，按要求在git bash中输入，这样就能将本地文件定向上传到指定的repository了。
+
+   备注：在上传的过程中出现了一下错误：fatal: unable to access 'https://github.com/xxx': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443，其原因是本机到github的网络连接中断，有可能是本机网络，有可能是网络的路由环境。我的问题是校园网断断续续，导致我在上传时使用了手机热点，也就是SSH Key建立连接时的IP和上传时的IP不一致，所以切换回校园网就上传成功了。
+参考：https://stackoverflow.com/questions/49345357/fatal-unable-to-access-https-github-com-xxx-openssl-ssl-connect-ssl-error。
+
+
+
+
+其他参考资料：
+https://blog.csdn.net/zhaozhn5/article/details/79443145
